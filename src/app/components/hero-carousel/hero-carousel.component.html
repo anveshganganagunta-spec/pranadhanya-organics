@@ -1,0 +1,122 @@
+<section
+  class="hero"
+  id="top"
+  #heroEl
+  aria-roledescription="carousel"
+  aria-label="Featured"
+  (mouseenter)="pause()"
+  (mouseleave)="restart()"
+  (touchstart)="onTouchStart($event)"
+  (touchend)="onTouchEnd($event)"
+>
+  <div class="carousel-track" [style.transform]="trackVar()">
+    <div class="slide" *ngFor="let slide of slides; let i = index" [ngSwitch]="i">
+
+      <svg *ngSwitchCase="0" class="slide-art" viewBox="0 0 900 680" preserveAspectRatio="xMidYMid slice">
+        <rect width="900" height="680" fill="#1F3D2B" />
+        <circle cx="660" cy="330" r="300" fill="#26482F" />
+        <ellipse cx="660" cy="470" rx="230" ry="60" fill="#152A1B" />
+        <path d="M430 460c0-40 100-60 230-60s230 20 230 60-100 90-230 90-230-50-230-90z" fill="#3B241A" />
+        <ellipse cx="660" cy="430" rx="225" ry="80" fill="#C98A2B" />
+        <g fill="#7A3428">
+          <ellipse cx="560" cy="410" rx="9" ry="5" transform="rotate(-20 560 410)" />
+          <ellipse cx="600" cy="395" rx="9" ry="5" transform="rotate(15 600 395)" />
+          <ellipse cx="650" cy="405" rx="9" ry="5" transform="rotate(-10 650 405)" />
+          <ellipse cx="700" cy="392" rx="9" ry="5" transform="rotate(20 700 392)" />
+          <ellipse cx="740" cy="415" rx="9" ry="5" transform="rotate(-15 740 415)" />
+          <ellipse cx="620" cy="425" rx="9" ry="5" transform="rotate(8 620 425)" />
+          <ellipse cx="690" cy="430" rx="9" ry="5" transform="rotate(-8 690 430)" />
+        </g>
+        <g fill="#E6B85C" opacity="0.85">
+          <ellipse cx="120" cy="110" rx="7" ry="4" transform="rotate(20 120 110)" />
+          <ellipse cx="180" cy="150" rx="7" ry="4" transform="rotate(-25 180 150)" />
+          <ellipse cx="90" cy="200" rx="7" ry="4" transform="rotate(10 90 200)" />
+          <ellipse cx="220" cy="90" rx="7" ry="4" transform="rotate(-10 220 90)" />
+        </g>
+      </svg>
+
+      <svg *ngSwitchCase="1" class="slide-art" viewBox="0 0 900 680" preserveAspectRatio="xMidYMid slice">
+        <rect width="900" height="680" fill="#1F3D2B" />
+        <circle cx="640" cy="300" r="300" fill="#2E4A34" />
+        <ellipse cx="650" cy="460" rx="235" ry="62" fill="#152A1B" />
+        <path d="M420 450c0-40 105-62 235-62s235 22 235 62-105 92-235 92-235-52-235-92z" fill="#E6B85C" />
+        <ellipse cx="650" cy="418" rx="228" ry="78" fill="#F3E7C9" />
+        <g fill="#7A3428">
+          <path d="M560 400c0-12 8-20 18-20s18 8 18 20-13 26-18 30c-5-4-18-18-18-30z" />
+          <path d="M620 415c0-12 8-20 18-20s18 8 18 20-13 26-18 30c-5-4-18-18-18-30z" />
+          <path d="M690 398c0-12 8-20 18-20s18 8 18 20-13 26-18 30c-5-4-18-18-18-30z" />
+        </g>
+        <g fill="#C98A2B">
+          <circle cx="600" cy="440" r="11" />
+          <circle cx="660" cy="450" r="11" />
+          <circle cx="720" cy="435" r="11" />
+          <circle cx="740" cy="405" r="11" />
+        </g>
+      </svg>
+
+      <svg *ngSwitchCase="2" class="slide-art" viewBox="0 0 900 680" preserveAspectRatio="xMidYMid slice">
+        <rect width="900" height="680" fill="#1F3D2B" />
+        <circle cx="650" cy="320" r="300" fill="#2A4A31" />
+        <ellipse cx="650" cy="470" rx="230" ry="60" fill="#152A1B" />
+        <path d="M430 460c0-40 100-60 230-60s230 20 230 60-100 90-230 90-230-50-230-90z" fill="#7A3428" />
+        <ellipse cx="650" cy="428" rx="222" ry="76" fill="#D9CBA0" />
+        <g fill="#C98A2B">
+          <circle cx="580" cy="415" r="10" />
+          <circle cx="610" cy="435" r="10" />
+          <circle cx="645" cy="410" r="10" />
+          <circle cx="680" cy="430" r="10" />
+          <circle cx="715" cy="412" r="10" />
+        </g>
+        <g fill="#1F3D2B" opacity="0.85">
+          <circle cx="600" cy="400" r="6" />
+          <circle cx="660" cy="445" r="6" />
+          <circle cx="700" cy="395" r="6" />
+        </g>
+      </svg>
+
+      <svg *ngSwitchCase="3" class="slide-art" viewBox="0 0 900 680" preserveAspectRatio="xMidYMid slice">
+        <rect width="900" height="680" fill="#1F3D2B" />
+        <circle cx="640" cy="310" r="300" fill="#26482F" />
+        <rect x="480" y="360" width="150" height="130" rx="6" fill="#C98A2B" />
+        <rect x="480" y="360" width="150" height="26" rx="6" fill="#E6B85C" />
+        <rect x="650" y="390" width="150" height="100" rx="6" fill="#7A3428" />
+        <rect x="650" y="390" width="150" height="24" rx="6" fill="#9C4A38" />
+        <rect x="565" y="300" width="150" height="70" rx="6" fill="#E6B85C" />
+        <rect x="565" y="300" width="150" height="18" rx="6" fill="#F3E7C9" />
+      </svg>
+
+      <div class="slide-scrim"></div>
+
+      <div class="slide-content">
+        <div class="hero-inner">
+          <div class="eyebrow">{{ slide.eyebrowKey | translate }}</div>
+          <h1>{{ slide.h1MainKey | translate }}<em>{{ slide.h1EmKey | translate }}</em></h1>
+          <p class="sub">{{ slide.subKey | translate }}</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" [href]="slide.ctaHref">{{ slide.ctaKey | translate }}</a>
+            <a class="btn btn-outline" [href]="whatsapp.link" target="_blank" rel="noopener">{{ 'hero_cta2' | translate }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="car-arrow car-prev" (click)="prev()" aria-label="Previous slide" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6" /></svg>
+  </button>
+  <button class="car-arrow car-next" (click)="next()" aria-label="Next slide" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6" /></svg>
+  </button>
+
+  <div class="car-dots">
+    <button
+      *ngFor="let slide of slides; let i = index"
+      class="car-dot"
+      [class.active]="i === index()"
+      (click)="goTo(i)"
+      type="button"
+      [attr.aria-label]="'Go to slide ' + (i + 1)"
+    ></button>
+  </div>
+</section>
+<div class="seed-divider" aria-hidden="true"></div>

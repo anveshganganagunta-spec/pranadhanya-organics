@@ -1,0 +1,27 @@
+<section style="padding-top: 0;">
+  <div class="wrap">
+    <div class="section-head fade-in in">
+      <div class="kicker">{{ 'bs_kicker' | translate }}</div>
+      <h2>{{ 'bs_h2' | translate }}</h2>
+    </div>
+    <div class="bs-scroll">
+      <div class="bs-card" *ngFor="let item of items">
+        <div class="bs-swatch">
+          <picture>
+            <source [srcset]="item.photo" type="image/webp" />
+            <img class="bs-img" [src]="item.image" [alt]="item.key | translate" />
+          </picture>
+        </div>
+        <h4>{{ item.key | translate }}</h4>
+        <div class="bs-controls">
+          <select class="bs-qty" [(ngModel)]="selected[item.key]" aria-label="Quantity">
+            <option *ngFor="let q of quantities" [value]="q">{{ q }}</option>
+          </select>
+          <a class="bs-order-btn" href="#" (click)="$event.preventDefault(); order(item.key)">
+            {{ 'order_now' | translate }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,22 @@
+<section id="about">
+  <div class="wrap">
+    <div class="why-wrap">
+      <div class="fade-in in">
+        <div class="kicker">{{ 'why_kicker' | translate }}</div>
+        <h2 class="why-title">{{ 'why_h2' | translate }}</h2>
+        <p class="about-copy">{{ 'why_copy' | translate }}</p>
+      </div>
+      <div class="why-panel fade-in in">
+        <ul class="check-list">
+          <li *ngFor="let reason of reasons">
+            <svg viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="11" fill="currentColor" opacity="0.15" />
+              <path d="M7 12.5l3 3 7-7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span>{{ reason | translate }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

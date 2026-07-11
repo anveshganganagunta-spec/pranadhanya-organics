@@ -1,0 +1,17 @@
+<section id="recipes">
+  <div class="wrap">
+    <div class="section-head fade-in in">
+      <div class="kicker">{{ 'rec_kicker' | translate }}</div>
+      <h2>{{ 'rec_h2' | translate }}</h2>
+    </div>
+    <div class="recipe-grid">
+      <div class="recipe-card fade-in in" *ngFor="let recipe of recipes">
+        <div class="recipe-photo" [style.background]="recipe.gradient"></div>
+        <div class="recipe-body">
+          <h3>{{ recipe.titleKey | translate }}</h3>
+          <p>{{ recipe.descKey | translate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
