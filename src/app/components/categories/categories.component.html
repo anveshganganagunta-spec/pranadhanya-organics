@@ -5,26 +5,12 @@
       <h2>{{ 'cat_h2' | translate }}</h2>
     </div>
     <div class="cat-grid">
-      <div class="cat-card fade-in in" *ngFor="let category of categories">
+      <a class="cat-card fade-in in" *ngFor="let category of categories" [routerLink]="['/category', category.name]">
         <picture>
-          <source [srcset]="category.photo" type="image/webp" />
           <img class="cat-icon" [src]="category.img" [alt]="category.name" />
         </picture>
         <h3>{{ category.label | translate }}</h3>
-        <div class="cat-actions">
-          <select class="cat-qty" [(ngModel)]="selected[category.name]" aria-label="Quantity">
-            <option *ngFor="let q of quantities" [value]="q">{{ q }}</option>
-          </select>
-          <a
-            class="order-btn"
-            [href]="whatsapp.orderLink(category.name, selected[category.name] || '100g')"
-            target="_blank"
-            rel="noopener"
-          >
-            {{ 'order_now' | translate }}
-          </a>
-        </div>
-      </div>
+      </a>
     </div>
   </div>
 </section>

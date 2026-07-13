@@ -2,7 +2,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(251, 246, 233, 0.92);
+  background: #fbf6e9;
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--line);
 }
@@ -10,7 +10,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 24px;
+  padding: 8px 18px;
   max-width: 1120px;
   margin: 0 auto;
 }
@@ -18,28 +18,29 @@ header {
   display: flex;
   align-items: center;
   gap: 10px;
-  text-decoration: none;
-  color: var(--ink);
+  flex-shrink: 0;
 }
-.logo-mark {
-  width: 34px;
-  height: 34px;
-  flex: none;
+.logo-icon {
+  height: 60px;      /* near-square now, so this reads as a proper visible mark */
+  width: auto;
+  display: block;
+  object-fit: contain;
 }
 .logo-text {
-  line-height: 1.05;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
 }
-.logo-text .name {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 19px;
-  letter-spacing: 0.01em;
+.logo-text strong {
+  font-family: 'Playfair Display', serif; /* or whatever your wordmark font is */
+  font-size: 20px;
+  color: var(--ink);
 }
-.logo-text .tag {
-  font-size: 10.5px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--maroon);
+.logo-text em {
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--gold);
 }
 nav.links {
   display: flex;

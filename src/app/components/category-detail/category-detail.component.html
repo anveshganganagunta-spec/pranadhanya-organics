@@ -1,0 +1,26 @@
+<app-header></app-header>
+<section class="category-detail">
+  <div class="wrap">
+    <button class="back-btn" (click)="goBack()">← {{ 'nav_products' | translate }}</button>
+    <div class="section-head fade-in in">
+      <div class="kicker">{{ categoryName }}</div>
+      <h2>{{ categoryName }}</h2>
+      <p class="category-description">Browse products in this category and choose quantity before ordering.</p>
+    </div>
+    <div class="product-grid">
+      <article class="product-card" *ngFor="let product of products">
+        <picture>
+          <source [srcset]="product.image" type="image/webp" />
+          <img class="product-img" [src]="product.image" [alt]="product.key" />
+        </picture>
+        <h3>{{ product.label | translate }}</h3>
+        <div class="action-row">
+          <select class="product-qty" [(ngModel)]="selected[product.key]">
+            <option *ngFor="let q of quantities" [value]="q">{{ q }}</option>
+          </select>
+          <button class="order-btn" (click)="order(product)">{{ 'order_now' | translate }}</button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
