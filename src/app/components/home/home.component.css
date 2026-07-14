@@ -1,0 +1,9 @@
+/* Add padding-top to account for fixed header */
+:host {
+  display: block;
+}
+
+/* Ensure categories and content below header don't get hidden */
+app-categories {
+  margin-top: 0;
+}

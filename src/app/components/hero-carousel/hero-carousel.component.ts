@@ -11,6 +11,7 @@ interface Slide {
   subKey: string;
   ctaKey: string; // primary button label key
   ctaHref: string; // primary button target
+  imageSrc?: string;
 }
 
 @Component({
@@ -27,10 +28,10 @@ export class HeroCarouselComponent implements OnInit, OnDestroy {
   heroRef = viewChild<ElementRef<HTMLElement>>('heroEl');
 
   slides: Slide[] = [
-    { eyebrowKey: 'hero_eyebrow', h1MainKey: 'hero_h1_main', h1EmKey: 'hero_h1_em', subKey: 'hero_sub', ctaKey: 'hero_cta1', ctaHref: '#products' },
-    { eyebrowKey: 's2_eyebrow', h1MainKey: 's2_h1_main', h1EmKey: 's2_h1_em', subKey: 's2_sub', ctaKey: 'hero_cta1', ctaHref: '#products' },
-    { eyebrowKey: 's3_eyebrow', h1MainKey: 's3_h1_main', h1EmKey: 's3_h1_em', subKey: 's3_sub', ctaKey: 'hero_cta1', ctaHref: '#products' },
-    { eyebrowKey: 's4_eyebrow', h1MainKey: 's4_h1_main', h1EmKey: 's4_h1_em', subKey: 's4_sub', ctaKey: 's4_cta1', ctaHref: '#contact' },
+    { eyebrowKey: 'hero_eyebrow', h1MainKey: 'hero_h1_main', h1EmKey: 'hero_h1_em', subKey: 'hero_sub', ctaKey: 'hero_cta1', ctaHref: '#products', imageSrc: 'assets/products/new_spices_banner.png' },
+    { eyebrowKey: 's2_eyebrow', h1MainKey: 's2_h1_main', h1EmKey: 's2_h1_em', subKey: 's2_sub', ctaKey: 'hero_cta1', ctaHref: '#products', imageSrc: 'assets/products/new_pulses_banner.png' },
+    { eyebrowKey: 's3_eyebrow', h1MainKey: 's3_h1_main', h1EmKey: 's3_h1_em', subKey: 's3_sub', ctaKey: 'hero_cta1', ctaHref: '#products', imageSrc: 'assets/products/new_millets_banner.png' },
+    { eyebrowKey: 's4_eyebrow', h1MainKey: 's4_h1_main', h1EmKey: 's4_h1_em', subKey: 's4_sub', ctaKey: 's4_cta1', ctaHref: '#contact', imageSrc: 'assets/products/new_dry_fruits.png' },
   ];
 
   index = signal(0);

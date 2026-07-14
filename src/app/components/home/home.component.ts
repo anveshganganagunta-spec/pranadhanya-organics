@@ -28,5 +28,6 @@ import { FooterComponent } from '../footer/footer.component';
     FooterComponent,
   ],
   templateUrl: './home.component.html',
+  styleUrl: './home.component.css',
 })
 export class HomeComponent {}
